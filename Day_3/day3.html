@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Day 3</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,17 +16,77 @@
 
 <body>
 
+    <style>
+        .jumbotron {
+            padding: 2rem 2rem;
+        }
+
+        /* td {
+            
+        } */
+    </style>
+
     <script>
 
         function handball_fetch() {
             $.ajax({
-                'url': 'http://apis.is/sports/handball',
+                'url': 'http://apis.is/cyclecounter',
                 'type': 'GET',
                 'dataType': 'json',
                 'success': function (response) {
                     console.log(response);
+
+                    response['results'].forEach(populate_list);
                 }
             });
+
+            function populate_list(row) {
+                let table = $('#datalist');
+
+                console.log("entered data population point");
+                // console.log(table);
+
+                
+                     // row_data = ""
+                row_data  =  '<tr> <td scope="row_data"> ' + row['Date'];
+                row_data += '</td><td>' + row['Time'];
+                row_data += '</td><td>' + row['DayCount'];
+                row_data += '</td><td>' + row['YearCount'];
+                // row_data += '</td><td>' + row['Teams'];
+                row_data += '</td></tr>';
+                // table.append('<tr> <td scope="row"> ' + row['Date']);
+                // table.append(row['Date']);
+
+                // table.append('</td><td>' + row['Time']);
+                // table.append(row['Time']);
+
+                // table.append('</td><td>' + row['Tournament']);
+                // table.append(row['Tournament']);
+
+                // table.append('</td><td>' + row['Venue']);
+                // table.append(row['Venue']);
+
+                // table.append('</td><td>' + row['Teams']);
+                // table.append(row['Teams']);
+
+                // row_data.concat('</td></tr>');
+                // console.log(row_data);
+                table.append(row_data);
+
+              
+               
+
+            // <tr>
+            //                 <td scope="row">data goes right here</td>
+            //                 <td></td>
+            //                 <td></td>
+            //             </tr>
+            //             <tr>
+            //                 <td scope="row"></td>
+            //                 <td></td>
+            //                 <td></td>
+            //             </tr>
+        }
         }
 
     </script>
@@ -34,7 +94,7 @@
 
         <div class="jumbotron">
             <center>
-                <h1 class="display-4">Day 2</h1>
+                <h1 class="display-4">Day 3</h1>
                 <!-- <p class="lead">Jumbo helper text</p> -->
                 <hr class="my-2">
                 <!-- <p>More info</p> -->
@@ -43,9 +103,23 @@
                         onclick="handball_fetch()">Generate
                         Data</button>
                 </p>
-
             </center>
         </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Day Count</th>
+                    <th>Year Count</th>
+                    <!-- <th>Teams</th> -->
+                </tr>
+            </thead>
+            <tbody id="datalist">
+
+            </tbody>
+        </table>
 
     </div>
 
@@ -72,7 +146,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </body>
 
 </html>

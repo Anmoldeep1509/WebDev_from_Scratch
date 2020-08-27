@@ -7,16 +7,14 @@
 
 ## Postman
 
-## XAMPP
+## Create Page with Dark Mode
 
-You can install xampp the package for
+HTML
 
-- Apache (server)
-- MariaDB (database)
-- PHP (server side programming/scripting)
-- Perl (server side programming)
+CSS
 
-## Create Static Page
+JS
+
 
 ## Use an API (free no auth)
 
