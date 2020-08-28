@@ -24,4 +24,4 @@ This shows that now JS works as an independent programming language, and is exec
 
 ## NPM modules
 
-we covered, terminal string highlighting module -- chalk
+we covered, terminal string highlighting module -- [chalk](https://www.npmjs.com/package/chalk)
